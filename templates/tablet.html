@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablet Selection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tablet.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Container: Selected Tablet Details -->
+        <!-- Left Container: Selected Tablet Details -->
+<!-- Left Container: Selected Tablet Details -->
+<div class="left-container">
+    <h2>Selected Tablets</h2>
+    <table id="tablet-details" border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>S No</th>
+                <th>Tablet Name</th>
+                <th>mg</th>
+                <th>Duration (days)</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Tablet details will be displayed here dynamically -->
+        </tbody>
+    </table>
+    <!-- Generate button (hidden initially) -->
+    <button id="generateBtn" style="display:none;" onclick="generateQRCode()">Generate</button>
+    <div id="qrcode" style="text-align:center;"></div> <!-- QR Code will be displayed here -->
+    <!-- <div id="actionButtons" style="display: none;">
+        <button onclick="sendToWhatsapp()">Send to WhatsApp</button>
+        <button onclick="printQRCode()">Print Out</button>
+        <button onclick="redirectTopatient_details()">Next</button>
+
+    </div> -->
+</div>
+
+
+        <!-- Right Container: Search and Tablet Selection -->
+        <div class="right-container">
+            <input type="text" id="tabletSearch" placeholder="Search tablet..." onkeyup="filterTablets()">
+            <div id="tablet-list">
+                <!-- List of tablets -->
+                <button onclick="selectTablet('Atorvastatin')">Atorvastatin</button>
+                <button onclick="selectTablet('Levothyroxine')">Levothyroxine</button>
+                <button onclick="selectTablet('Lisinopril')">Lisinopril</button>
+                <button onclick="selectTablet('Metformin')">Metformin</button>
+                <button onclick="selectTablet('Metoprolol')">Metoprolol</button>
+                <button onclick="selectTablet('Amlodipine')">Amlodipine</button>
+                <button onclick="selectTablet('Albuterol')">Albuterol</button>
+                <button onclick="selectTablet('Omeprazole')">Omeprazole</button>
+                <button onclick="selectTablet('Losartan')">Losartan</button>
+                <button onclick="selectTablet('Gabapentin')">Gabapentin</button>
+                <button onclick="selectTablet('Simvastatin')">Simvastatin</button>
+                <button onclick="selectTablet('Hydrochlorothiazide')">Hydrochlorothiazide</button>
+                <button onclick="selectTablet('Acetaminophen')">Acetaminophen</button>
+                <button onclick="selectTablet('Ibuprofen')">Ibuprofen</button>
+                <button onclick="selectTablet('Prednisone')">Prednisone</button>
+                <button onclick="selectTablet('Amoxicillin')">Amoxicillin</button>
+                <button onclick="selectTablet('Citalopram')">Citalopram</button>
+                <button onclick="selectTablet('Gabapentin')">Gabapentin</button>
+                <button onclick="selectTablet('Tramadol')">Tramadol</button>
+                <button onclick="selectTablet('Sertraline')">Sertraline</button>
+                <button onclick="selectTablet('Montelukast')">Montelukast</button>
+                <button onclick="selectTablet('Furosemide')">Furosemide</button>
+                <button onclick="selectTablet('Azithromycin')">Azithromycin</button>
+                <button onclick="selectTablet('Clopidogrel')">Clopidogrel</button>
+                <button onclick="selectTablet('Warfarin')">Warfarin</button>
+                <button onclick="selectTablet('Propranolol')">Propranolol</button>
+                <button onclick="selectTablet('Cetirizine')">Cetirizine</button>
+                <button onclick="selectTablet('Ranitidine')">Ranitidine</button>
+                <button onclick="selectTablet('Paroxetine')">Paroxetine</button>
+                <button onclick="selectTablet('Rosuvastatin')">Rosuvastatin</button>
+                <button onclick="selectTablet('Pantoprazole')">Pantoprazole</button>
+                <button onclick="selectTablet('Meloxicam')">Meloxicam</button>
+                <button onclick="selectTablet('Loratadine')">Loratadine</button>
+                <button onclick="selectTablet('Doxycycline')">Doxycycline</button>
+                <button onclick="selectTablet('Atenolol')">Atenolol</button>
+                <button onclick="selectTablet('Tamsulosin')">Tamsulosin</button>
+                <button onclick="selectTablet('Venlafaxine')">Venlafaxine</button>
+                <button onclick="selectTablet('Cyclobenzaprine')">Cyclobenzaprine</button>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Modal Container for Tablet Input -->
+    <!-- Modal Container for Tablet Input -->
+<div id="tabletModal" class="modal">
+    <div class="modal-content">
+        <h2>Enter Tablet Details</h2>
+        <form id="tabletForm">
+            <label for="tablet-name">Tablet Name:</label>
+            <input type="text" id="tablet-name" name="tablet-name" readonly>
+
+            <label for="tablet-mg">Tablet mg:</label>
+            <input type="number" id="tablet-mg" name="tablet-mg" required>
+
+            <label for="tablet-duration">Duration (days):</label>
+            <input type="number" id="tablet-duration" name="tablet-duration" required>
+
+            <label for="tablet-quantity">Quantity:</label>
+            <input type="number" id="tablet-quantity" name="tablet-quantity" required>
+
+            <button type="button" onclick="confirmTablet()">Confirm</button>
+        </form>
+        <!-- QR Code will be displayed here -->
+        <div id="qrcode" style="text-align: center; margin: 20px auto;"></div>
+<div id="actionButtons" style="display: none; text-align: center;">
+    <button onclick="sendToWhatsApp()">Send to WhatsApp</button>
+    <button onclick="printQRCode()">Print</button>
+    <button onclick="nextPage()">Next</button>
+</div>
+
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='tablet_script.js') }}"></script>
+<!-- Include QRCode library -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+
+</script>
+
+<script src="path/to/qrcode.min.js"></script>
+

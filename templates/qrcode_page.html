@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='qrcode_styles.css') }}">
+</head>
+<body>
+    <div class="qr-code-container">
+        <div id="qrcode"></div>
+        <div class="qr-buttons">
+            <button id="sendToWhatsApp" onclick="sendToWhatsApp()">Send to WhatsApp</button>
+            <button id="printout" onclick="printQRCode()">Printout</button>
+            <button id="next" onclick="goToNextPage()">Next</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="{{ url_for('static', filename='qrcode_script.js') }}"></script>
+</body>
+</html>

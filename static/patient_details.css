@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c034d;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%; /* Reduced width from 80% to 60% */
+    max-width: 900px; /* Optional: set a max width for larger screens */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #330572;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border-style: solid;
+    border-color: aqua;
+}
+
+
+h1 {
+    
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 500px;
+}
+
+label {
+    font-weight: bold;
+    color: white;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1332bc;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0a21a2;
+    border-style: solid;
+    border-color: aqua;
+}
+
+.patient-container {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.error-message {
+    background-color: #ffcccc;
+    padding: 15px;
+    border-radius: 8px;
+    color: #d9534f;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Add space between patient container and the "Next" button form */
+.next-form {
+    margin-top: 20px;
+}
+
+button.next-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1332bc;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button.next-button:hover {
+    background-color: #0a21a2;
+    border-style: solid;
+    border-color: aqua;
+}

@@ -1,0 +1,204 @@
+/* General container styling */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 90vh;
+}
+
+.left-container {
+    width: 45%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: 660px;
+}
+
+/* Right container for search and tablet buttons */
+.right-container {
+    width: 45%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    height: 660px;
+}
+
+#tabletSearch {
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Flexbox container for tablet buttons */
+#tablet-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px; /* Adds space between tablet buttons */
+}
+
+#tablet-list button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#tablet-list button:hover {
+    background-color: #45a049;
+}
+
+/* Ensure 4 tablet buttons per row but allow wrapping */
+#tablet-list button {
+    flex: 1 1 calc(25% - 10px); /* Makes buttons flexible and responsive */
+    margin-bottom: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    text-align: left;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button[type="button"] {
+    background-color: #1332bc;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="button"]:hover {
+    background-color: #0a21a2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+/* Ensure button is always visible */
+button#confirmBtn {
+    display: block; /* Ensure it’s not hidden */
+    margin: 20px auto; /* Center button horizontally */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-align: center;
+}
+
+button#confirmBtn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* QR Code Container Styling */
+.qr-code-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000; /* Ensures it appears above other content */
+}
+
+.qr-buttons {
+    margin-top: 20px;
+}
+
+.qr-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.qr-buttons button:hover {
+    background-color: #45a049;
+}
+
+#qrcode {
+    width: 300px;
+    height: 300px;
+}
+
+/* Optional: Add this to your CSS file for styling the QR code container and action buttons */
+#qrContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+}
+
+#qrContainer canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+#actionButtons {
+    margin-top: 20px;
+}
+
+#actionButtons button {
+    margin: 0 10px;
+}

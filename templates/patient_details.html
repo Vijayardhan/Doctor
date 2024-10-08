@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='patient_details.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Details</h1>
+        <form action="{{ url_for('search_patient') }}" method="post">
+            <label for="patient_id">Enter Patient ID:</label>
+            <input type="text" id="patient_id" name="patient_id" required>
+            <button type="submit">OK</button>
+        </form>
+        
+        {% if patient %}
+            <div class="patient-container">
+                <p><strong>ID:</strong> {{ patient['patient_id'] }}</p>
+                <p><strong>Name:</strong> {{ patient['patient_name'] }}</p>
+                <p><strong>Phone Number:</strong> {{ patient['phone_number'] }}</p>
+                <p><strong>Location:</strong> {{ patient['location'] }}</p>
+                <p><strong>Sickness:</strong> {{ patient['sickness'] }}</p>
+            </div>
+            <form action="{{ url_for('tablet') }}" method="get">
+                <button type="submit" class="next-button">Next</button>
+            </form>
+        {% elif error %}
+            <div class="error-message">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
